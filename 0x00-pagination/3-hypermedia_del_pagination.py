@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-It removes-resilient hypermedia pagination
+Deletion-resilient hypermedia pagination
 """
 
 import csv
 import math
-from typing import List, Dict
+from typing import List
 
 
 class Server:
-    """Server class for pagination of database of popular baby names
+    """Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -18,7 +18,7 @@ class Server:
         self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
-        """It retrieves cached dataset
+        """Cached dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -29,7 +29,7 @@ class Server:
         return self.__dataset
 
     def indexed_dataset(self) -> Dict[int, List]:
-        """Retrieves dataset indexed by sorting position, starting at 0
+        """Dataset indexed by sorting position, starting at 0
         """
         if self.__indexed_dataset is None:
             dataset = self.dataset()
@@ -46,10 +46,10 @@ class Server:
         assert type(index) is int and index > 0
         assert type(page_size) is int and page_size > 0
 
-        _dict = {
+        page_data = {
             "index": index,
             "data": self.dataset()[index: index + page_size],
             "page_size": len(self.dataset()[index: index + page_size]),
             "next_index": index + page_size
         }
-        return _dict
+        return page_data

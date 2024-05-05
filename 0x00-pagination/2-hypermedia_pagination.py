@@ -59,7 +59,7 @@ class Server:
         _dataFull = self.dataset()
         _total_pages = ceil(len(_dataFull) / page_size)
 
-        _dict = {
+        page_data = {
             "page_size": len(_dataPage),
             "page": page,
             "data": _dataPage,
@@ -67,4 +67,4 @@ class Server:
             "prev_page": page - 1 if page > 1 else None,
             "total_pages": _total_pages
         }
-        return _dict
+        return page_data

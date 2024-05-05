@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Class Server
+Server Class for Pagination
 """
 import csv
 import math
@@ -12,19 +12,19 @@ index_range = __import__('0-simple_helper_function').index_range
 
 class Server:
     """
-    Server class to paginate a database of popular baby names.
+    Server class for paginating database of popular baby names
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
         """
-        Constructor
+        It initializes Server object
         """
         self.__dataset = None
 
     def dataset(self) -> List[List]:
         """
-        Cached dataset
+        It retrieves cached dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -36,7 +36,7 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        get page content
+        It retrieves content of specific page
         """
         assert type(page) is int and page > 0
         assert type(page_size) is int and page_size > 0

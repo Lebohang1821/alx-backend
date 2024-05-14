@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A Basic Flask app with internationalization support.
+"""Basic Flask app with internationalization support
 """
 import pytz
 from typing import Union, Dict
@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, g
 
 
 class Config:
-    """Represents a Flask Babel configuration.
+    """It represents Flask Babel configuration
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -28,7 +28,7 @@ users = {
 
 
 def get_user() -> Union[Dict, None]:
-    """Retrieves a user based on a user id.
+    """It retrieves user based on user id
     """
     login_id = request.args.get('login_as', '')
     if login_id:
@@ -38,7 +38,7 @@ def get_user() -> Union[Dict, None]:
 
 @app.before_request
 def before_request() -> None:
-    """Performs some routines before each request's resolution.
+    """Performs some routines before each request's resolution
     """
     user = get_user()
     g.user = user
@@ -46,7 +46,7 @@ def before_request() -> None:
 
 @babel.localeselector
 def get_locale() -> str:
-    """Retrieves the locale for a web page.
+    """It retrieves locale for web page
     """
     queries = request.query_string.decode('utf-8').split('&')
     query_table = dict(map(
@@ -67,7 +67,7 @@ def get_locale() -> str:
 
 @babel.timezoneselector
 def get_timezone() -> str:
-    """Retrieves the timezone for a web page.
+    """It retrieves timezone for web page
     """
     timezone = request.args.get('timezone', '').strip()
     if not timezone and g.user:
@@ -80,7 +80,7 @@ def get_timezone() -> str:
 
 @app.route('/')
 def get_index() -> str:
-    """The home/index page.
+    """Home/index page
     """
     g.time = format_datetime()
     return render_template('index.html')

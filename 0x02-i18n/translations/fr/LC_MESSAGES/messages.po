@@ -18,6 +18,8 @@ msgstr "Vous êtes connecté en tant que %(username)s."
 
 msgid "not_logged_in"
 msgstr "Vous n'êtes pas connecté."
+
+# Project metadata
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-05-14 11:09+0000\n"

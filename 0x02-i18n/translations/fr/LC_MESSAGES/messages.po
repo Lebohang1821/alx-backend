@@ -18,8 +18,6 @@ msgstr "Vous êtes connecté en tant que %(username)s."
 
 msgid "not_logged_in"
 msgstr "Vous n'êtes pas connecté."
-
-# Project metadata
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-05-14 11:09+0000\n"
@@ -32,4 +30,3 @@ msgstr "Vous n'êtes pas connecté."
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-

@@ -1,7 +1,0 @@
-# French translations for i18n.
-# Copyright (C) 2022 Bezaleel Olakunori
-# This file is distributed under the same license as the i18n project.
-# Bezaleel Olakunori <bezaleeloci@gmail.com>, 2022.
-#
-msgid ""
-msgstr ""

@@ -1,6 +1,7 @@
 #!/usr/bin/yarn dev
 import { createClient, print } from 'redis';
 
+// It import 'createClient' and 'print' functions from 'redis' library.
 const client = createClient();
 
 client.on('error', (err) => {

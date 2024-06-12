@@ -1,6 +1,7 @@
 #!/usr/bin/yarn dev
 import { createQueue } from 'kue';
 
+// It define array of job information objects.
 const jobs = [
   {
     phoneNumber: '4153518780',

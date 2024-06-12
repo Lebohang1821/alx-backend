@@ -1,8 +1,9 @@
 #!/usr/bin/yarn dev
 import { Queue, Job } from 'kue';
 
+// It imports Queue and Job classes from 'kue' library.
 /**
- * Creates push notification jobs from the array of jobs info.
+ * It creates push notification jobs from array of jobs info.
  * @param {Job[]} jobs
  * @param {Queue} queue
  */

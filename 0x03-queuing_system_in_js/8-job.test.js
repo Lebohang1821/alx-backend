@@ -4,6 +4,7 @@ import { expect } from 'chai';
 import { createQueue } from 'kue';
 import createPushNotificationsJobs from './8-job.js';
 
+// It describe test suite.
 describe('createPushNotificationsJobs', () => {
   const BIG_BROTHER = sinon.spy(console);
   const QUEUE = createQueue({ name: 'push_notification_code_test' });

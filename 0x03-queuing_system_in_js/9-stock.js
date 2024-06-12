@@ -3,6 +3,7 @@ import express from 'express';
 import { promisify } from 'util';
 import { createClient } from 'redis';
 
+// An array containing product information
 const listProducts = [
   {
     itemId: 1,
@@ -43,17 +44,17 @@ const client = createClient();
 const PORT = 1245;
 
 /**
- * Modifies the reserved stock for a given item.
- * @param {number} itemId - The id of the item.
- * @param {number} stock - The stock of the item.
+ * It modifies reserved stock for given item.
+ * @param {number} itemId - id of the item.
+ * @param {number} stock - Stock of the item.
  */
 const reserveStockById = async (itemId, stock) => {
   return promisify(client.SET).bind(client)(`item.${itemId}`, stock);
 };
 
 /**
- * Retrieves the reserved stock for a given item.
- * @param {number} itemId - The id of the item.
+ * Retrieves reserved stock for a given item.
+ * @param {number} itemId - id of item.
  * @returns {Promise<String>}
  */
 const getCurrentReservedStockById = async (itemId) => {

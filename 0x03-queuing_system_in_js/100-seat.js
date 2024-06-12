@@ -4,6 +4,7 @@ import { promisify } from 'util';
 import { createQueue } from 'kue';
 import { createClient } from 'redis';
 
+// It creates Express application.
 const app = express();
 const client = createClient({ name: 'reserve_seat' });
 const queue = createQueue();
@@ -12,15 +13,15 @@ let reservationEnabled = false;
 const PORT = 1245;
 
 /**
- * Modifies the number of available seats.
- * @param {number} number - The new number of seats.
+ * It modifies number of available seats.
+ * @param {number} number - New number of seats.
  */
 const reserveSeat = async (number) => {
   return promisify(client.SET).bind(client)('available_seats', number);
 };
 
 /**
- * Retrieves the number of available seats.
+ * It retrieves number of available seats.
  * @returns {Promise<String>}
  */
 const getCurrentAvailableSeats = async () => {

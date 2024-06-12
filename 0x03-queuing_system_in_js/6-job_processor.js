@@ -1,6 +1,7 @@
 #!/usr/bin/yarn dev
 import { createQueue } from 'kue';
 
+// It creates new queue instance.
 const queue = createQueue();
 
 const sendNotification = (phoneNumber, message) => {

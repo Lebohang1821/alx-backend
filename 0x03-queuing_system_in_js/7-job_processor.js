@@ -1,11 +1,12 @@
 #!/usr/bin/yarn dev
 import { createQueue, Job } from 'kue';
 
+// It defines array of blacklisted phone numbers.
 const BLACKLISTED_NUMBERS = ['4153518780', '4153518781'];
 const queue = createQueue();
 
 /**
- * Sends a push notification to a user.
+ * It sends push notification to user.
  * @param {String} phoneNumber
  * @param {String} message
  * @param {Job} job

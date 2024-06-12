@@ -2,6 +2,7 @@
 import { promisify } from 'util';
 import { createClient, print } from 'redis';
 
+// It creates new Redis client instance.
 const client = createClient();
 
 client.on('error', (err) => {
